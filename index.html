@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const medidas = {
+  busto: parseFloat(prompt('Ingresa la medida de tu busto en cm:')),
+  cintura: parseFloat(prompt('Ingresa la medida de tu cintura en cm:')),
+  cadera: parseFloat(prompt('Ingresa la medida de tu cadera en cm:'))
+};
+
+const tallas = [
+  { talle: 'XS', busto: 30, cintura: 22, cadera: 32 },
+  { talle: 'S', busto: 32, cintura: 24, cadera: 34 },
+  { talle: 'M', busto: 36, cintura: 28, cadera: 38 },
+  { talle: 'L', busto: 40, cintura: 32, cadera: 42 },
+  { talle: 'XL', busto: 44, cintura: 36, cadera: 46 }
+];
+
+let talleEncontrado = 'No se encontró un talle adecuado';
+for (let i = 0; i < tallas.length; i++) {
+  const talle = tallas[i];
+  if (medidas.busto >= talle.busto && medidas.cintura >= talle.cintura && medidas.cadera >= talle.cadera) {
+    talleEncontrado = talle.talle;
+    break;
+  }
+}
+
+console.log('Tu talle es:', talleEncontrado);
+
+alert('Tu talle es: ' + talleEncontrado + ' Gracias ' )
+
+    </script>
+</body>
+</html>
